@@ -1,0 +1,19 @@
+
+/*
+    Clases utilitarias con los colores de la Marca.
+*/
+.text-primary-brand {
+    color: var(--clr-green-brand);
+}
+
+.text-primary-dark-brand {
+    color: var(--clr-darkgreen-brand);
+}
+
+.bg-primary-brand {
+    background-color: var(--clr-green-brand);
+}
+
+.bg-primary-dark-brand {
+    background-color: var(--clr-darkgreen-brand);
+}
