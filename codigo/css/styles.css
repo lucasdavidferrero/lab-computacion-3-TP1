@@ -1,19 +1,22 @@
 
 /*
-    Clases utilitarias con los colores de la Marca.
+    Clases utilitarias.
 */
 .text-primary-brand {
-    color: var(--clr-green-brand);
+    color: var(--clr-green);
 }
 
 .text-primary-dark-brand {
-    color: var(--clr-darkgreen-brand);
+    color: var(--clr-darkgreen);
 }
 
 .bg-primary-brand {
-    background-color: var(--clr-green-brand);
+    background-color: var(--clr-green);
 }
 
-.bg-primary-dark-brand {
-    background-color: var(--clr-darkgreen-brand);
+/* Menu */
+.menu-principal {
+    border-bottom: 1px solid var(--clr-darkgreen);
 }
+
+/* Footer */
