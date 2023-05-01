@@ -20,6 +20,22 @@
 }
 
 /* Footer */
+.footer-social {
+    background-color: var(--clr-green);
+    color: white;
+}
+.footer-social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-social-list a {
+    text-decoration: none;
+    color: white;
+}
+.footer-social-list a:hover {
+    border-bottom: 1px solid white;
+}
 
 
 /* Home */
