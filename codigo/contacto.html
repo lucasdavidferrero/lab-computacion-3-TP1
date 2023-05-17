@@ -54,9 +54,9 @@
 
         <!-- Main -->
         <main class="main-home mt-3 text-center text-lg-start">
-            <div class="container">
-                <h1>Contacto</h1>
-
+            <div class="container mb-3">
+                <h1 class="mb-3">Contacto</h1>
+                <div id="alertScroll"></div>
                 <div class="alert alert-success d-none" role="alerta exito" id="alertSuccess">
                     <h4 class="alert-heading">Mensaje enviado satisfactoriamente</h4>
                     <p>Muchas gracias, te responderemos en la brevedad.</p>
@@ -73,13 +73,13 @@
                         <div class="row">
                                 <div class="col-lg">
                                     <div class="mb-3">
-                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <label for="nombre" class="form-label">Nombre*</label>
                                         <input type="text" class="form-control" id="nombre" aria-describedby="nombre">
                                     </div>
                                 </div>
                                 <div class="col-lg">
                                     <div class="mb-3">
-                                        <label for="apellido" class="form-label">Apellido</label>
+                                        <label for="apellido" class="form-label">Apellido*</label>
                                         <input type="text" class="form-control" id="apellido" aria-describedby="apellido">
                                     </div>
                                 </div>
@@ -87,23 +87,23 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="mb-3">
-                                    <label for="asunto" class="form-label">Asunto</label>
+                                    <label for="asunto" class="form-label">Asunto*</label>
                                     <input type="text" class="form-control" id="asunto" aria-describedby="asunto">
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label">Email*</label>
                                     <input type="email" class="form-control" id="email" aria-describedby="email">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <label for="mensaje" class="form-label">Mensaje*</label>
                             <textarea class="form-control" id="mensaje" rows="3"></textarea>
                         </div>
 
-                        <div>
+                        <div class="d-grid d-lg-block">
                             <button class="btn btn-primary" type="submit" >Enviar</button>
                         </div>
                     </fieldset>    
@@ -170,6 +170,7 @@
 
         const alertError = document.getElementById('alertError')
         const alertSuccess = document.getElementById('alertSuccess')
+        const alertScroll = document.getElementById('alertScroll')
 
         const txtNombre = document.getElementById('nombre')
         const txtApellido = document.getElementById('apellido')
@@ -183,9 +184,25 @@
             return str.length >= min
         }
 
+        function reiniciarAlerts() {
+            alertError.classList.remove('d-block')
+            alertError.classList.add('d-none')
+            alertSuccess.classList.remove('d-block')
+            alertSuccess.classList.add('d-none')
+        }
+
+        function reiniciarInputs () {
+            txtNombre.value = ''
+            txtApellido.value = ''
+            txtAsunto.value = ''
+            txtEmail.value = ''
+            txtMensaje.value = ''
+        }
+
 
         function validarFormularioContacto (event) {
             event.preventDefault()
+            reiniciarAlerts()
             const mensajesError = { nombre: '', apellido: '', asunto: '', email: '', mensaje: '' }
             let errorList = ''
             if (!minLengthTxt(txtNombre.value)) {
@@ -211,6 +228,9 @@
                 }
             }
 
+            location.href = "#";
+            location.href = "#alertScroll";
+
             if (alMenosUnError) {
                 alertError.querySelector('ul').innerHTML = errorList
                 alertError.classList.remove('d-none')
@@ -219,7 +239,9 @@
             }
 
             // Mostrar success y reiniciar form
-
+            alertSuccess.classList.remove('d-none')
+            alertSuccess.classList.add('d-block')
+            reiniciarInputs()
         }
 
 
