@@ -55,7 +55,7 @@
         <!-- Main -->
         <main class="main-home mt-3 text-center text-lg-start">
             <div class="container mb-3">
-                <h1 class="mb-3">Completa el formulario y asociate</h1>
+                <h1 class="mb-3">Completá el formulario y asociate</h1>
 
                 <div id="alertScroll"></div>
 
@@ -76,7 +76,7 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="mb-3">
-                                    <label for="deporte" class="form-label">Deporte</label>
+                                    <label for="deporte" class="form-label">Deporte*</label>
                                     <select class="form-select" aria-label="Selecciona un deporte" id="deporte">
                                         <option selected value="-1">Selecciona el deporte de su agrado</option>
                                         <option value="1">Fútbol</option>
@@ -153,7 +153,7 @@
 
                         <div class="d-grid d-lg-block">
                             <button class="btn btn-primary" type="submit" aria-describedby="formHelp">Enviar</button>
-                            <div id="formHelp" class="form-text">*La información será almacenada en nuestra base de datos.</div>
+                            <div id="formHelp" class="form-text">*La información estará almacenada en nuestra base de datos y no será compartida a terceros.</div>
                         </div>
                     </fieldset>    
                 </form>
@@ -256,14 +256,14 @@
         }
 
         function validarControles () {
-            frm.deporte.error = frm.deporte.el.value === -1
+            frm.deporte.error = frm.deporte.el.value === '-1'
             frm.dni.error = !minLengthTxt(frm.dni.el.value) || Number.isNaN(Number(frm.dni.el.value)) || Number(frm.dni.el.value) < 0
             frm.nombre.error = !minLengthTxt(frm.nombre.el.value)
             frm.apellido.error = !minLengthTxt(frm.apellido.el.value)
             frm.direccion.error = !minLengthTxt(frm.direccion.el.value)
             frm.ciudad.error = !minLengthTxt(frm.ciudad.el.value)
             frm.provincia.error = !minLengthTxt(frm.provincia.el.value)
-            frm.nacimiento.error = !dateRegex.test(frm.nacimiento.el.value) || frm.nacimiento.el.value.valueAsNumber > (Date.now - EDAD_MINIMA_DEPORTE)
+            frm.nacimiento.error = !dateRegex.test(frm.nacimiento.el.value) || frm.nacimiento.el.valueAsNumber > (Date.now() - EDAD_MINIMA_DEPORTE)
             frm.telefono.error = !minLengthTxt(frm.telefono.el.value) || Number.isNaN(Number(frm.telefono.el.value)) || Number(frm.telefono.el.value) < 0
             frm.email.error = !emailRegex.test(frm.email.el.value)
         }
