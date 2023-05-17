@@ -57,18 +57,18 @@
             <div class="container">
                 <h1>Contacto</h1>
 
-                <div class="alert alert-success" role="alerta exito">
+                <div class="alert alert-success d-none" role="alerta exito" id="alertSuccess">
                     <h4 class="alert-heading">Mensaje enviado satisfactoriamente</h4>
                     <p>Muchas gracias, te responderemos en la brevedad.</p>
                 </div>
 
-                <div class="alert alert-danger" role="alerta error">
+                <div class="alert alert-danger d-none" role="alerta error" id="alertError">
                     <h4 class="alert-heading">Verifica los errores</h4>
-                    <ul id="erroresList">
+                    <ul>
                     </ul>
                 </div>
 
-                <form action="#" novalidate>
+                <form action="#" novalidate onsubmit="validarFormularioContacto(event)">
                     <fieldset class="bg-secondary-subtle p-4 rounded">
                         <div class="row">
                                 <div class="col-lg">
@@ -104,7 +104,7 @@
                         </div>
 
                         <div>
-                            <button class="btn btn-primary" type="button">Enviar</button>
+                            <button class="btn btn-primary" type="submit" >Enviar</button>
                         </div>
                     </fieldset>    
                 </form>
@@ -163,5 +163,67 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script>
+        "use strict";
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        const alertError = document.getElementById('alertError')
+        const alertSuccess = document.getElementById('alertSuccess')
+
+        const txtNombre = document.getElementById('nombre')
+        const txtApellido = document.getElementById('apellido')
+        const txtAsunto = document.getElementById('asunto')
+        const txtEmail = document.getElementById('email')
+        const txtMensaje = document.getElementById('mensaje')
+
+        const MIN_CHAR_TXT = 3
+
+        function minLengthTxt (str, min = MIN_CHAR_TXT) {
+            return str.length >= min
+        }
+
+
+        function validarFormularioContacto (event) {
+            event.preventDefault()
+            const mensajesError = { nombre: '', apellido: '', asunto: '', email: '', mensaje: '' }
+            let errorList = ''
+            if (!minLengthTxt(txtNombre.value)) {
+                mensajesError.nombre = `El <strong>nombre</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            }
+            if (!minLengthTxt(txtApellido.value)) {
+                mensajesError.apellido = `El <strong>apellido</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            }
+            if (!minLengthTxt(txtAsunto.value)) {
+                mensajesError.asunto = `El <strong>asunto</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            }
+            if (!minLengthTxt(txtEmail.value) || !emailRegex.test(txtEmail.value)) {
+                mensajesError.email = `El <strong>email</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres y tener un formato válido`
+            }
+            if (!minLengthTxt(txtMensaje.value)) {
+                mensajesError.mensaje = `El <strong>mensaje</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            }
+            let alMenosUnError = false
+            for (const key in mensajesError) {
+                if (mensajesError[key].length !== 0) {
+                    alMenosUnError = true
+                    errorList += `<li>${mensajesError[key]}</li>`
+                }
+            }
+
+            if (alMenosUnError) {
+                alertError.querySelector('ul').innerHTML = errorList
+                alertError.classList.remove('d-none')
+                alertError.classList.add('d-block')
+                return
+            }
+
+            // Mostrar success y reiniciar form
+
+        }
+
+
+
+    </script>
 </body>
 </html>
