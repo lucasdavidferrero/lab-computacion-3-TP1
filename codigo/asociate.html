@@ -78,7 +78,7 @@
                                 <div class="mb-3">
                                     <label for="deporte" class="form-label">Deporte</label>
                                     <select class="form-select" aria-label="Selecciona un deporte" id="deporte">
-                                        <option selected>Selecciona el deporte de su agrado</option>
+                                        <option selected value="-1">Selecciona el deporte de su agrado</option>
                                         <option value="1">Fútbol</option>
                                         <option value="2">Basquet</option>
                                         <option value="3">Tenis</option>
@@ -216,6 +216,7 @@
     <script>
         "use strict";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const dateRegex = /^\d{4}[./-]\d{2}[./-]\d{2}$/
 
         const alertError = document.getElementById('alertError')
         const alertSuccess = document.getElementById('alertSuccess')
@@ -228,13 +229,14 @@
             apellido: { errorMsg: 'El apellido es obligatorio', el: document.getElementById('apellido'), error: false },
             direccion: { errorMsg: 'La dirección es obligatoria', el: document.getElementById('direccion'), error: false },
             ciudad: { errorMsg: 'La ciudad es obligatoria', el: document.getElementById('ciudad'), error: false },
-            ciudad: { errorMsg: 'La provincia es obligatoria', el: document.getElementById('provincia'), error: false },
-            nacimiento: { errorMsg: 'Ingrese una fecha de nacimiento válida', el: document.getElementById('nacimiento'), error: false },
+            provincia: { errorMsg: 'La provincia es obligatoria', el: document.getElementById('provincia'), error: false },
+            nacimiento: { errorMsg: 'Ingrese una fecha de nacimiento válida. La persona debe ser mayor a 4 años de edad.', el: document.getElementById('nacimiento'), error: false },
             telefono: { errorMsg: 'Ingrese un teléfono válido', el: document.getElementById('telefono'), error: false },
             email: { errorMsg: 'Ingrese un email válido', el: document.getElementById('email'), error: false },
         }
 
         const MIN_CHAR_TXT = 3
+        const EDAD_MINIMA_DEPORTE = 1.261e+11
 
         function minLengthTxt (str, min = MIN_CHAR_TXT) {
             return str.length >= min
@@ -253,10 +255,44 @@
             }
         }
 
+        function validarControles () {
+            frm.deporte.error = frm.deporte.el.value === -1
+            frm.dni.error = !minLengthTxt(frm.dni.el.value) || Number.isNaN(Number(frm.dni.el.value)) || Number(frm.dni.el.value) < 0
+            frm.nombre.error = !minLengthTxt(frm.nombre.el.value)
+            frm.apellido.error = !minLengthTxt(frm.apellido.el.value)
+            frm.direccion.error = !minLengthTxt(frm.direccion.el.value)
+            frm.ciudad.error = !minLengthTxt(frm.ciudad.el.value)
+            frm.provincia.error = !minLengthTxt(frm.provincia.el.value)
+            frm.nacimiento.error = !dateRegex.test(frm.nacimiento.el.value) || frm.nacimiento.el.value.valueAsNumber > (Date.now - EDAD_MINIMA_DEPORTE)
+            frm.telefono.error = !minLengthTxt(frm.telefono.el.value) || Number.isNaN(Number(frm.telefono.el.value)) || Number(frm.telefono.el.value) < 0
+            frm.email.error = !emailRegex.test(frm.email.el.value)
+        }
+
         function validarFormularioAsociate (event) {
             event.preventDefault()
             reiniciarAlerts()
             let errorList = ''
+            validarControles()
+            for (const key in frm) {
+                if (frm[key].error) {
+                    errorList += `<li>${frm[key].errorMsg}</li>`
+                }
+            }
+
+            location.href = "#";
+            location.href = "#alertScroll";
+
+            if (errorList === '') {
+                // Mensaje satisfactorio
+                alertSuccess.classList.remove('d-none')
+                alertSuccess.classList.add('d-block')
+                reiniciarInputs()
+            } else {
+                // Mensaje de error
+                alertError.querySelector('ul').innerHTML = errorList
+                alertError.classList.remove('d-none')
+                alertError.classList.add('d-block')
+            }
         }
 
 
