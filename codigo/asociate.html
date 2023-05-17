@@ -55,8 +55,10 @@
         <!-- Main -->
         <main class="main-home mt-3 text-center text-lg-start">
             <div class="container mb-3">
-                <h1 class="mb-3">Contacto</h1>
+                <h1 class="mb-3">Completa el formulario y asociate</h1>
+
                 <div id="alertScroll"></div>
+
                 <div class="alert alert-success d-none" role="alerta exito" id="alertSuccess">
                     <h4 class="alert-heading">Mensaje enviado satisfactoriamente</h4>
                     <p>Muchas gracias, te responderemos en la brevedad.</p>
@@ -68,43 +70,90 @@
                     </ul>
                 </div>
 
-                <form action="#" novalidate onsubmit="validarFormularioContacto(event);">
+                <form action="#" novalidate onsubmit="validarFormularioAsociate(event);">
                     <fieldset class="bg-secondary-subtle p-4 rounded">
-                        <div class="row">
-                                <div class="col-lg">
-                                    <div class="mb-3">
-                                        <label for="nombre" class="form-label">Nombre*</label>
-                                        <input type="text" class="form-control" id="nombre">
-                                    </div>
-                                </div>
-                                <div class="col-lg">
-                                    <div class="mb-3">
-                                        <label for="apellido" class="form-label">Apellido*</label>
-                                        <input type="text" class="form-control" id="apellido">
-                                    </div>
-                                </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-lg">
                                 <div class="mb-3">
-                                    <label for="asunto" class="form-label">Asunto*</label>
-                                    <input type="text" class="form-control" id="asunto">
+                                    <label for="deporte" class="form-label">Deporte</label>
+                                    <select class="form-select" aria-label="Selecciona un deporte" id="deporte">
+                                        <option selected>Selecciona el deporte de su agrado</option>
+                                        <option value="1">Fútbol</option>
+                                        <option value="2">Basquet</option>
+                                        <option value="3">Tenis</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="dni" class="form-label">DNI*</label>
+                                    <input type="number" min="0" class="form-control" id="dni">
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre*</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="apellido" class="form-label">Apellido*</label>
+                                    <input type="text" class="form-control" id="apellido">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="direccion" class="form-label">Dirección*</label>
+                                    <input type="text" class="form-control" id="direccion">
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="ciudad" class="form-label">Ciudad*</label>
+                                    <input type="text" class="form-control" id="ciudad">
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="provincia" class="form-label">Provincia*</label>
+                                    <input type="text" class="form-control" id="provincia">
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="nacimiento" class="form-label">Fecha de nacimiento*</label>
+                                    <input type="date" class="form-control" id="nacimiento">
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono*</label>
+                                    <input type="tel" class="form-control" id="telefono">
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email*</label>
-                                    <input type="email" class="form-control" id="email">
+                                    <input type="text" class="form-control" id="email">                                
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje*</label>
-                            <textarea class="form-control" id="mensaje" rows="3"></textarea>
-                        </div>
 
                         <div class="d-grid d-lg-block">
-                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <button class="btn btn-primary" type="submit" aria-describedby="formHelp">Enviar</button>
+                            <div id="formHelp" class="form-text">*La información será almacenada en nuestra base de datos.</div>
                         </div>
                     </fieldset>    
                 </form>
@@ -172,11 +221,18 @@
         const alertSuccess = document.getElementById('alertSuccess')
         const alertScroll = document.getElementById('alertScroll')
 
-        const txtNombre = document.getElementById('nombre')
-        const txtApellido = document.getElementById('apellido')
-        const txtAsunto = document.getElementById('asunto')
-        const txtEmail = document.getElementById('email')
-        const txtMensaje = document.getElementById('mensaje')
+        const frm = {
+            deporte: { errorMsg: 'Seleccione un deporte', el: document.getElementById('deporte'), error: false },
+            dni: { errorMsg: 'Ingrese un DNI válido. El DNI es obligatorio', el: document.getElementById('dni'), error: false },
+            nombre: { errorMsg: 'El nombre es obligatorio', el: document.getElementById('nombre'), error: false },
+            apellido: { errorMsg: 'El apellido es obligatorio', el: document.getElementById('apellido'), error: false },
+            direccion: { errorMsg: 'La dirección es obligatoria', el: document.getElementById('direccion'), error: false },
+            ciudad: { errorMsg: 'La ciudad es obligatoria', el: document.getElementById('ciudad'), error: false },
+            ciudad: { errorMsg: 'La provincia es obligatoria', el: document.getElementById('provincia'), error: false },
+            nacimiento: { errorMsg: 'Ingrese una fecha de nacimiento válida', el: document.getElementById('nacimiento'), error: false },
+            telefono: { errorMsg: 'Ingrese un teléfono válido', el: document.getElementById('telefono'), error: false },
+            email: { errorMsg: 'Ingrese un email válido', el: document.getElementById('email'), error: false },
+        }
 
         const MIN_CHAR_TXT = 3
 
@@ -192,58 +248,16 @@
         }
 
         function reiniciarInputs () {
-            txtNombre.value = ''
-            txtApellido.value = ''
-            txtAsunto.value = ''
-            txtEmail.value = ''
-            txtMensaje.value = ''
+            for (const key in frm) {
+                frm[key].el.value = ''
+            }
         }
 
-
-        function validarFormularioContacto (event) {
+        function validarFormularioAsociate (event) {
             event.preventDefault()
             reiniciarAlerts()
-            const mensajesError = { nombre: '', apellido: '', asunto: '', email: '', mensaje: '' }
             let errorList = ''
-            if (!minLengthTxt(txtNombre.value)) {
-                mensajesError.nombre = `El <strong>nombre</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
-            }
-            if (!minLengthTxt(txtApellido.value)) {
-                mensajesError.apellido = `El <strong>apellido</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
-            }
-            if (!minLengthTxt(txtAsunto.value)) {
-                mensajesError.asunto = `El <strong>asunto</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
-            }
-            if (!minLengthTxt(txtEmail.value) || !emailRegex.test(txtEmail.value)) {
-                mensajesError.email = `El <strong>email</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres y tener un formato válido`
-            }
-            if (!minLengthTxt(txtMensaje.value)) {
-                mensajesError.mensaje = `El <strong>mensaje</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
-            }
-            let alMenosUnError = false
-            for (const key in mensajesError) {
-                if (mensajesError[key].length !== 0) {
-                    alMenosUnError = true
-                    errorList += `<li>${mensajesError[key]}</li>`
-                }
-            }
-
-            location.href = "#";
-            location.href = "#alertScroll";
-
-            if (alMenosUnError) {
-                alertError.querySelector('ul').innerHTML = errorList
-                alertError.classList.remove('d-none')
-                alertError.classList.add('d-block')
-                return
-            }
-
-            // Mostrar success y reiniciar form
-            alertSuccess.classList.remove('d-none')
-            alertSuccess.classList.add('d-block')
-            reiniciarInputs()
         }
-
 
 
     </script>
