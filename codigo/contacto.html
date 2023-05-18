@@ -33,10 +33,10 @@
                     <a class="nav-link" href="./index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Noticias</a>
+                    <a class="nav-link" href="./noticias.html">Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galería</a>
+                    <a class="nav-link" href="./galeria.html">Galería</a>
                 </li>
                 
                 <li class="nav-item btn-asociarse">
@@ -184,6 +184,7 @@
     <script>
         "use strict";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const soloLetrasEspaciosRegex = /^[A-Za-z\s]*$/
 
         const alertError = document.getElementById('alertError')
         const alertSuccess = document.getElementById('alertSuccess')
@@ -222,11 +223,11 @@
             reiniciarAlerts()
             const mensajesError = { nombre: '', apellido: '', asunto: '', email: '', mensaje: '' }
             let errorList = ''
-            if (!minLengthTxt(txtNombre.value)) {
-                mensajesError.nombre = `El <strong>nombre</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            if (!minLengthTxt(txtNombre.value) || !soloLetrasEspaciosRegex.test(txtNombre.value)) {
+                mensajesError.nombre = `El <strong>nombre</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres. Solo se admiten letras`
             }
-            if (!minLengthTxt(txtApellido.value)) {
-                mensajesError.apellido = `El <strong>apellido</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
+            if (!minLengthTxt(txtApellido.value) || !soloLetrasEspaciosRegex.test(txtApellido.value)) {
+                mensajesError.apellido = `El <strong>apellido</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres. Solo se admiten letras`
             }
             if (!minLengthTxt(txtAsunto.value)) {
                 mensajesError.asunto = `El <strong>asunto</strong> debe tener al menos ${MIN_CHAR_TXT} caracteres.`
