@@ -1,4 +1,9 @@
 
+/* Elementos */
+::selection {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+}
 /*
     Clases utilitarias.
 */
@@ -35,6 +40,14 @@
 .menu-principal {
     border-bottom: 1px solid var(--clr-darkgreen);
 }
+.nav-link {
+    font-weight: 600;
+}
+.nav-item .nav-link.active {
+    box-shadow: 0 -3px var(--clr-green) inset;
+    color: var(--clr-green);
+}
+/* Fin Menu */
 
 /* Footer */
 .footer-social {
@@ -56,13 +69,16 @@
 }
 
 /* = Estilos por página = */
+.main-contacto, .main-asociate {
+    background-color: var(--clr-green);
+}
 /* Home */
 .header-home {
     background-image: url('../recursos/img/balon-futbol.jpg');
     background-position: center;
     background-size: cover;
     color: white;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 2px 2px 1px black;
     padding: 8rem;
 }
 .header-title {

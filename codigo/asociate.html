@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse ms-3" id="navbarNav">
                 <ul class="navbar-nav gap-3 text-center text-lg-start">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link" href="./index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Noticias</a>
@@ -40,10 +40,10 @@
                 </li>
                 
                 <li class="nav-item btn-asociarse">
-                    <a class="nav-link" href="#">Asociarse</a>
+                    <a class="nav-link active" href="./asociate.html" aria-current="page">Asociarse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
                 </li>
                 </ul>
             </div>
@@ -53,9 +53,8 @@
         <!--Fin Menu-->
 
         <!-- Main -->
-        <main class="main-home mt-3 text-center text-lg-start">
+        <main class="main-asociate py-5 text-center text-lg-start">
             <div class="container mb-3">
-                <h1 class="mb-3">Completá el formulario y asociate</h1>
 
                 <div id="alertScroll"></div>
 
@@ -72,7 +71,7 @@
 
                 <form action="#" novalidate onsubmit="validarFormularioAsociate(event);">
                     <fieldset class="bg-secondary-subtle p-4 rounded">
-
+                        <h1 class="mb-3">Completá el formulario y asociate</h1>
                         <div class="row">
                             <div class="col-lg">
                                 <div class="mb-3">
@@ -152,7 +151,7 @@
                         </div>
 
                         <div class="d-grid d-lg-block">
-                            <button class="btn btn-primary" type="submit" aria-describedby="formHelp">Enviar</button>
+                            <button class="btn btn-primary-brand" type="submit" aria-describedby="formHelp">Quiero asociarme</button>
                             <div id="formHelp" class="form-text">*La información estará almacenada en nuestra base de datos y no será compartida a terceros.</div>
                         </div>
                     </fieldset>    
