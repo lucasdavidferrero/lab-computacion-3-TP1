@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Club Atlético Unión de Sunchales - Contacto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">-->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -217,22 +216,23 @@
         "use strict";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         const dateRegex = /^\d{4}[./-]\d{2}[./-]\d{2}$/
+        const soloLetrasEspaciosRegex = /^[A-Za-z\s]*$/
 
         const alertError = document.getElementById('alertError')
         const alertSuccess = document.getElementById('alertSuccess')
         const alertScroll = document.getElementById('alertScroll')
 
         const frm = {
-            deporte: { errorMsg: 'Seleccione un deporte', el: document.getElementById('deporte'), error: false },
-            dni: { errorMsg: 'Ingrese un DNI válido. El DNI es obligatorio', el: document.getElementById('dni'), error: false },
-            nombre: { errorMsg: 'El nombre es obligatorio', el: document.getElementById('nombre'), error: false },
-            apellido: { errorMsg: 'El apellido es obligatorio', el: document.getElementById('apellido'), error: false },
-            direccion: { errorMsg: 'La dirección es obligatoria', el: document.getElementById('direccion'), error: false },
-            ciudad: { errorMsg: 'La ciudad es obligatoria', el: document.getElementById('ciudad'), error: false },
-            provincia: { errorMsg: 'La provincia es obligatoria', el: document.getElementById('provincia'), error: false },
-            nacimiento: { errorMsg: 'Ingrese una fecha de nacimiento válida. La persona debe ser mayor a 4 años de edad.', el: document.getElementById('nacimiento'), error: false },
-            telefono: { errorMsg: 'Ingrese un teléfono válido', el: document.getElementById('telefono'), error: false },
-            email: { errorMsg: 'Ingrese un email válido', el: document.getElementById('email'), error: false },
+            deporte: { errorMsg: 'El <strong>deporte</strong> es obligatorio', el: document.getElementById('deporte'), error: false },
+            dni: { errorMsg: 'Ingrese un <strong>DNI</strong> válido. El DNI es obligatorio', el: document.getElementById('dni'), error: false },
+            nombre: { errorMsg: 'El <strong>nombre</strong> es obligatorio. Solo se admiten letras', el: document.getElementById('nombre'), error: false },
+            apellido: { errorMsg: 'El <strong>apellido</strong> es obligatorio. Solo se admiten letras', el: document.getElementById('apellido'), error: false },
+            direccion: { errorMsg: 'La <strong>dirección</strong> es obligatoria', el: document.getElementById('direccion'), error: false },
+            ciudad: { errorMsg: 'La <strong>ciudad</strong> es obligatoria', el: document.getElementById('ciudad'), error: false },
+            provincia: { errorMsg: 'La <strong>provincia</strong> es obligatoria. Solo se admiten letras', el: document.getElementById('provincia'), error: false },
+            nacimiento: { errorMsg: 'Ingrese una <strong>fecha de nacimiento</strong> válida. La persona debe ser mayor a 4 años de edad.', el: document.getElementById('nacimiento'), error: false },
+            telefono: { errorMsg: 'Ingrese un <strong>teléfono</strong> válido', el: document.getElementById('telefono'), error: false },
+            email: { errorMsg: 'Ingrese un <strong>email</strong> válido', el: document.getElementById('email'), error: false },
         }
 
         const MIN_CHAR_TXT = 3
@@ -258,11 +258,11 @@
         function validarControles () {
             frm.deporte.error = frm.deporte.el.value === '-1'
             frm.dni.error = !minLengthTxt(frm.dni.el.value) || Number.isNaN(Number(frm.dni.el.value)) || Number(frm.dni.el.value) < 0
-            frm.nombre.error = !minLengthTxt(frm.nombre.el.value)
-            frm.apellido.error = !minLengthTxt(frm.apellido.el.value)
+            frm.nombre.error = !minLengthTxt(frm.nombre.el.value) || !soloLetrasEspaciosRegex.test(frm.nombre.el.value)
+            frm.apellido.error = !minLengthTxt(frm.apellido.el.value) || !soloLetrasEspaciosRegex.test(frm.apellido.el.value)
             frm.direccion.error = !minLengthTxt(frm.direccion.el.value)
             frm.ciudad.error = !minLengthTxt(frm.ciudad.el.value)
-            frm.provincia.error = !minLengthTxt(frm.provincia.el.value)
+            frm.provincia.error = !minLengthTxt(frm.provincia.el.value) || !soloLetrasEspaciosRegex.test(frm.provincia.el.value)
             frm.nacimiento.error = !dateRegex.test(frm.nacimiento.el.value) || frm.nacimiento.el.valueAsNumber > (Date.now() - EDAD_MINIMA_DEPORTE)
             frm.telefono.error = !minLengthTxt(frm.telefono.el.value) || Number.isNaN(Number(frm.telefono.el.value)) || Number(frm.telefono.el.value) < 0
             frm.email.error = !emailRegex.test(frm.email.el.value)
