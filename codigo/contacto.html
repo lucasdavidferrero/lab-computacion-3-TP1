@@ -53,9 +53,21 @@
         <!--Fin Menu-->
 
         <!-- Main -->
-        <main class="main-home mt-3 text-center text-lg-start">
-            <div class="container mb-3">
-                <h1 class="mb-3">Contacto</h1>
+        <main class="main-contacto pt-4 text-center text-lg-start">
+            <section class="container mb-4">
+                <div class="bg-secondary-subtle p-4 rounded">
+                    <h1>Información de contacto</h1>
+                    <div>
+                        <ul>
+                            <li>Ubicación: Gabriel Miretti e Italia – Sunchales, Santa Fe</li>
+                            <li>Tel: (03493) 42-2559</li>
+                            <li>Email: union-sunchales@union-sunchales.com.ar</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="container mb-4">
+                
                 <div id="alertScroll"></div>
                 <div class="alert alert-success d-none" role="alerta exito" id="alertSuccess">
                     <h4 class="alert-heading">Mensaje enviado satisfactoriamente</h4>
@@ -70,6 +82,7 @@
 
                 <form action="#" novalidate onsubmit="validarFormularioContacto(event);">
                     <fieldset class="bg-secondary-subtle p-4 rounded">
+                        <h2 class="h1 mb-3">Formulario de Contacto</h2>
                         <div class="row">
                                 <div class="col-lg">
                                     <div class="mb-3">
@@ -104,10 +117,14 @@
                         </div>
 
                         <div class="d-grid d-lg-block">
-                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <button class="btn btn-primary-brand" type="submit">Enviar Mensaje</button>
                         </div>
                     </fieldset>    
                 </form>
+            </section>
+            
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1438.8544994583353!2d-61.56226201088292!3d-30.93720127183057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943544563057e439%3A0xb5cce2ce389e8ac4!2sClub%20Atl%C3%A9tico%20Uni%C3%B3n%20de%20Sunchales!5e0!3m2!1ses-419!2sar!4v1684411965111!5m2!1ses-419!2sar" class="w-100 d-block" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </main>
         <!-- Fin Main -->

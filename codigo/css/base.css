@@ -1,5 +1,7 @@
 :root {
     --clr-green: #118E33;
+    --clr-green-rgb: 17, 142, 51;
     --clr-darkgreen: #044215;
+    --clr-darkgreen-rgb: 4, 66, 21;
     --clr-white: #fff;
 }

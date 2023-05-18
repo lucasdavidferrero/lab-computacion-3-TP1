@@ -16,6 +16,17 @@
 .bg-primary-dark-brand {
     background-color: var(--clr-darkgreen);
 }
+
+/* Brand Buttons */
+.btn.btn-primary-brand, .btn-primary-brand:focus-visible {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+}
+.btn-primary-brand:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+    outline: rgb(var(--clr-green-rgb), 0.5) solid 4px;
+}
 /*
     Fin Clases utilitarias.
 */
@@ -58,3 +69,10 @@
     border-radius: 5px;
     width: auto;
 }
+/* Fin Home */
+
+/* Contacto */
+.main-contacto {
+    background-color: var(--clr-green);
+}
+/* Fin Contacto */
