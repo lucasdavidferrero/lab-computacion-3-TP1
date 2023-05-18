@@ -87,6 +87,12 @@
 }
 /* Fin Home */
 
+/* Noticias */
+.grilla-noticias {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
 /* Contacto */
 .main-contacto {
     background-color: var(--clr-green);
