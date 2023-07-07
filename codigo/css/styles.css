@@ -76,7 +76,7 @@
     opacity: 0.8;
 }
 
-/* = Estilos por página = */
+/* ========== Estilos por página ========== */
 .main-contacto, .main-asociate {
     background-color: var(--clr-green);
 }
@@ -109,5 +109,9 @@
 /* Contacto */
 .main-contacto {
     background-color: var(--clr-green);
+}
+.radio-socio-control > .form-check-input, 
+.radio-socio-control > .form-check-label {
+    cursor: pointer;
 }
 /* Fin Contacto */
