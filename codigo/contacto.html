@@ -114,13 +114,13 @@
                             <div class="col-lg">
                                 <div class="mb-3 d-flex gap-3">
                                     <div class="radio-socio-control">
-                                        <input class="form-check-input" type="radio" name="radioEsSocio" id="radioNoSocio" checked>
+                                        <input class="form-check-input" type="radio" name="radioEsSocio" id="radioNoSocio" value="no_socio" checked>
                                         <label class="form-check-label" for="radioNoSocio">
                                             No soy socio
                                         </label>
                                     </div>
                                     <div class="radio-socio-control">
-                                        <input class="form-check-input d-inline-block ml-3" type="radio" name="radioEsSocio" id="radioSocio">
+                                        <input class="form-check-input d-inline-block ml-3" type="radio" name="radioEsSocio" id="radioSocio" value="socio">
                                         <label class="form-check-label" for="radioSocio">
                                             Soy socio
                                         </label>
@@ -212,6 +212,7 @@
         const txtAsunto = document.getElementById('asunto')
         const txtEmail = document.getElementById('email')
         const txtMensaje = document.getElementById('mensaje')
+        const radioNoSocio = document.getElementById('radioNoSocio')
 
         const MIN_CHAR_TXT = 3
 
@@ -232,6 +233,7 @@
             txtAsunto.value = ''
             txtEmail.value = ''
             txtMensaje.value = ''
+            radioNoSocio.checked = true
         }
 
 
