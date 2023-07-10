@@ -1,10 +1,42 @@
 [
     {
         "id": "ee154f46-10d4-4007-9ecf-44332bc45346",
-        "nombre": "Camiseta Prematch 2023",
+        "nombre": "Camiseta Prematch - 2023",
         "categoria": "Hombre Fútbol",
         "precio": 11000,
         "disponible": true,
-        "imgURL": "./"
+        "imgURL": "./recursos/img/productos/futbolprematch2023.jpg"
+    },
+    {
+        "id": "4d20afcc-516d-4118-8b34-6cd17c17772c",
+        "nombre": "Camiseta Titular - 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 15000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/futbol-titular2023.jpg"
+    },
+    {
+        "id": "778f7c59-4e9d-45a6-8b2e-2f9cb466476b",
+        "nombre": "Camiseta Alternativa - 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 9000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/futbol-alternativa2023.jpg"
+    },
+    {
+        "id": "ef820171-f4bb-46d9-b403-e0efc19a5568",
+        "nombre": "Camiseta Alternativa 2 - 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 9000,
+        "disponible": false,
+        "imgURL": "./recursos/img/productos/futbol-alternativa2-2023.jpg"
+    },
+    {
+        "id": "cd0ac5b6-6a00-4c46-9f95-d7ce967c7cd1",
+        "nombre": "Arquero - 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 18000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/arquero-2023.jpg"
     }
 ]
