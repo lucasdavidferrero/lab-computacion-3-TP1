@@ -140,4 +140,14 @@
         margin-bottom: 0;
     }
 }
+.card-img-container {
+    position: relative;
+}
+.card-precio {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-color: var(--clr-green) !important;
+    border-top-left-radius: 0.5rem;
+}
 /* Fin Merchandising */
