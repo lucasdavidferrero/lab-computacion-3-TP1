@@ -115,3 +115,29 @@
     cursor: pointer;
 }
 /* Fin Contacto */
+
+/* Merchandising */
+.grid-productos {
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+.grid-productos > .card {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+}
+/* Fin Merchandising */
