@@ -1,0 +1,10 @@
+[
+    {
+        "id": "ee154f46-10d4-4007-9ecf-44332bc45346",
+        "nombre": "Camiseta Prematch 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 11000,
+        "disponible": true,
+        "imgURL": "./"
+    }
+]
