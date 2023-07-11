@@ -93,6 +93,18 @@
     border-radius: 5px;
     width: auto;
 }
+#mainTitle {
+    transform: translateX(-2000px) scale(0.75);
+    opacity: 0;
+    animation: 0.8s ease-in forwards mainTitleAnimation;
+}
+@keyframes mainTitleAnimation {
+    0% {}
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
 /* Fin Home */
 
 /* Noticias */
