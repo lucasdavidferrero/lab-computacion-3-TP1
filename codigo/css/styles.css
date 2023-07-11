@@ -55,6 +55,12 @@
     box-shadow: 0 -3px var(--clr-green) inset;
     color: var(--clr-green);
 }
+.navbar-brand > img[alt=CAU]:hover {
+    transition: 0.25s ease-in transform;
+}
+.navbar-brand > img[alt=CAU]:hover {
+    transform: scale(1.15);
+}
 /* Fin Menu */
 
 /* Footer */
