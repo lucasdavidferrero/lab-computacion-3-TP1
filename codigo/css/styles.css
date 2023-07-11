@@ -150,4 +150,8 @@
     border-color: var(--clr-green) !important;
     border-top-left-radius: 0.5rem;
 }
+.card-img-container > img {
+    max-height: 400px;
+    object-fit: cover;
+}
 /* Fin Merchandising */

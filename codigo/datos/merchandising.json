@@ -38,5 +38,13 @@
         "precio": 18000,
         "disponible": true,
         "imgURL": "./recursos/img/productos/arquero-2023.jpg"
+    },
+    {
+        "id": "63e54883-4589-4ff5-b558-2c89d4e7ca5e",
+        "nombre": "Remera entrenamiento 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 12000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/remera-entrenamiento.jpg"
     }
 ]
