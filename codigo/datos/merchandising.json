@@ -40,11 +40,211 @@
         "imgURL": "./recursos/img/productos/arquero-2023.jpg"
     },
     {
-        "id": "63e54883-4589-4ff5-b558-2c89d4e7ca5e",
-        "nombre": "Remera entrenamiento 2014",
+        "id": "cd0ac5b6-6a00-4c46-9f95-d7ce967c7cd1",
+        "nombre": "Arquero - 2023",
+        "categoria": "Hombre Fútbol",
+        "precio": 18000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/arquero-2023.jpg"
+    },
+    {
+        "id": "6bf68494-183e-47f2-8c1e-55194aa0eafd",
+        "nombre": "Camiseta Titular - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 20000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/camiseta-titular.jpg"
+    },
+    {
+        "id": "5f9351cf-2c7a-4b7e-b360-076e5294bd6b",
+        "nombre": "Pantalón Titular - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/pantalon-titular.jpg"
+    },
+    {
+        "id": "d702b7f3-3cb3-490c-bf79-9d917e00b5b9",
+        "nombre": "Camiseta Alternativa - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 11000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/camiseta-alternativa.jpg"
+    },
+    {
+        "id": "7483883a-457b-4207-af04-cb240b4d4521",
+        "nombre": "Pantalón Alternativo - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 9000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/pantalon-alternativo.jpg"
+    },
+    {
+        "id": "219d1334-92ba-40d9-940a-41dea821c767",
+        "nombre": "Camiseta Entrenamiento - 2015",
         "categoria": "Hombre Fútbol",
         "precio": 12000,
         "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/camiseta-entrenamiento.jpg"
+    },
+    {
+        "id": "93c434fa-83cf-47dd-bd72-214a79937580",
+        "nombre": "Pantalón Entrenamiento - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/pantalon-entrenamiento.jpg"
+    },
+    {
+        "id": "54849815-4c25-47b9-bc5a-939324eac54a",
+        "nombre": "Camiseta Oficial Copa Argentina vs San Lorenzo - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 20000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/camiseta-copa-argentina-vs-san-lorenzo.jpg"
+    },
+    {
+        "id": "ba212d4e-2408-4004-8364-7f72bb0094f7",
+        "nombre": "Sudadera de entrenamiento - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/sudadera-entrenamiento.jpg"
+    },
+    {
+        "id": "055ab47b-b28c-45dd-8ccf-132069cc30a7",
+        "nombre": "Remera de viaje cuerpo técnico - 2015",
+        "categoria": "Hombre Fútbol",
+        "precio": 7000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2015/remera-viaje-cuerpo-tecnico.jpg"
+    },
+    {
+        "id": "70b505e5-c16f-4b41-9d8b-10e8631a5c0c",
+        "nombre": "Camiseta Titular - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/camiseta-titular.jpg"
+    },
+    {
+        "id": "1b00e4a9-dbc4-43ad-8e3e-319b89900990",
+        "nombre": "Pantalón Titular - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 9000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/pantalon-titular.jpg"
+    },
+    {
+        "id": "d4ba309e-d294-446b-9d37-bea0f0fb00d1",
+        "nombre": "Remera Alternativa - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 11000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/remera-alternativa.jpg"
+    },
+    {
+        "id": "4e92ae38-a7c3-491f-a62c-95fc155e88f6",
+        "nombre": "Pantalón Alternativo - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 9000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/pantalon-alternativo.jpg"
+    },
+    {
+        "id": "3ac88df4-f933-47ea-b146-e131621c3ac0",
+        "nombre": "Remera entrenamiento - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
         "imgURL": "./recursos/img/productos/2014/remera-entrenamiento.jpg"
+    },
+    {
+        "id": "2256f032-db18-47ee-8e25-db5a6e84f32e",
+        "nombre": "Buzo entrenamiento - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 15000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/buzo-entrenamiento.jpg"
+    },
+    {
+        "id": "c1d325f9-eceb-41fd-a723-a15404543c25",
+        "nombre": "Camiseta de viaje - 2014",
+        "categoria": "Hombre Fútbol",
+        "precio": 11000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2014/camiseta-viaje.jpg"
+    },
+    {
+        "id": "c4d5ccb0-471b-4771-b7bd-e41fc3e039cf",
+        "nombre": "Camiseta Titular - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 12000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/camiseta-titular.jpg"
+    },
+    {
+        "id": "0a66f525-e817-4a89-b0f3-bc5f8dcbc60f",
+        "nombre": "Pantalón Titular - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/pantalon-titular.jpg"
+    },
+    {
+        "id": "cb4810f5-e396-4b57-84f0-521f98766649",
+        "nombre": "Camiseta Alternativa - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 11000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/camiseta-alternativa.jpg"
+    },
+    {
+        "id": "7ea84811-8a05-4c4d-bf39-ff1df9dbfcbf",
+        "nombre": "Pantalón Alternativo - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/pantalon-alternativa.jpg"
+    },
+    {
+        "id": "62e2c589-1ab9-41e0-a9d4-6691a58d217d",
+        "nombre": "Chomba tiempo libre - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 12000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/chomba-tiempo-libre.jpg"
+    },
+    {
+        "id": "f2e6a53c-35da-40b5-bcb8-22666e407c51",
+        "nombre": "Vermuda tiempo libre - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/vermuda-tiempolibre.jpg"
+    },
+    {
+        "id": "a834c44a-fc62-4a9c-801d-c57f0945d93a",
+        "nombre": "Sudadera - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 10000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/sudadera.jpg"
+    },
+    {
+        "id": "0258cae8-3593-4676-a119-ca356b663652",
+        "nombre": "Buzo viaje - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 15000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/buzo-viaje.jpg"
+    },
+    {
+        "id": "1299492b-5f8d-4a6c-9ae9-2e694280d795",
+        "nombre": "Pantalón largo viaje - 2012",
+        "categoria": "Hombre Fútbol",
+        "precio": 16000,
+        "disponible": true,
+        "imgURL": "./recursos/img/productos/2012/pantalon-largo-viaje.jpg"
     }
 ]
