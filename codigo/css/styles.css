@@ -120,6 +120,9 @@
     color: var(--clr-white);
     box-shadow: 4px 4px 40px 0 var(--clr-darkgreen);
 }
+#figureIngresoPrincipal {
+    transition: 0.5s opacity ease-in;
+}
 /* Fin Home */
 
 /* Noticias */
