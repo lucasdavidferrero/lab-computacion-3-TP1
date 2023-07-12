@@ -12,6 +12,9 @@
     background-color: var(--clr-green);
     color: var(--clr-white);
 }
+body {
+    overflow-x: hidden;
+}
 /*
     Clases utilitarias.
 */
@@ -39,6 +42,17 @@
     background-color: var(--clr-green);
     color: var(--clr-white);
     outline: rgb(var(--clr-green-rgb), 0.5) solid 4px;
+}
+
+/* Transformaciones */
+.translate-x-0 {
+    transform: translateX(0);
+}
+.translate-x-full {
+    transform: translateX(100%);
+}
+.-translate-x-full {
+    transform: translateX(-100%);
 }
 /*
     Fin Clases utilitarias.
@@ -120,8 +134,8 @@
     color: var(--clr-white);
     box-shadow: 4px 4px 40px 0 var(--clr-darkgreen);
 }
-#figureIngresoPrincipal {
-    transition: 0.5s opacity ease-in;
+#figureIngresoPrincipal, #figureFnFi {
+    transition: 0.7s all ease-in;
 }
 /* Fin Home */
 
