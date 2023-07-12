@@ -111,6 +111,15 @@
         opacity: 1;
     }
 }
+.cards-container .card {
+    cursor: pointer;
+    transition: 0.2s all ease-out;
+}
+.cards-container .card:hover {
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+    box-shadow: 4px 4px 40px 0 var(--clr-darkgreen);
+}
 /* Fin Home */
 
 /* Noticias */
