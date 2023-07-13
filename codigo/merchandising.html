@@ -157,6 +157,21 @@
             `
         }
 
+        function agregarEventosCards () {
+            const cardsProductos = document.querySelectorAll('#gridProductos > .card')
+            cardsProductos.forEach((card) => {
+                card.addEventListener('mouseenter', (e) => {
+                    console.log('mouseenter', e)
+                })
+            })
+
+            cardsProductos.forEach((card) => {
+                card.addEventListener('mouseleave', (e) => {
+                    console.log('mouseleave', e)
+                })
+            })
+        }
+
         (async () => {
             const productosURL = './datos/merchandising.json'
             const contenedorProductos = document.getElementById('gridProductos')
@@ -166,6 +181,7 @@
                 acumuladorComponentesHTML += construirComponente(p)
             })
             contenedorProductos.innerHTML = acumuladorComponentesHTML
+            agregarEventosCards()
         })();
     </script>
 </body>
