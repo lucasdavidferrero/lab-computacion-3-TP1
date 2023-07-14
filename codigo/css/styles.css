@@ -99,7 +99,7 @@ body {
 }
 
 /* ========== Estilos por página ========== */
-.main-contacto, .main-asociate {
+.main-contacto {
     background-color: var(--clr-green);
 }
 /* Home */
@@ -224,3 +224,22 @@ body {
     object-fit: cover;
 }
 /* Fin Merchandising */
+
+/* Asociate */
+.main-asociate {
+
+    min-height: 90vh;
+
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    animation: scroll 250s linear infinite;
+  background: url("../recursos/fondo-asociarse.jpg"),
+  #416A4A;
+    background-size: cover;
+}
+@keyframes scroll {
+    100% {
+      background-position: 0 -400%;
+    }
+  }
+/* Fin Asociate */
