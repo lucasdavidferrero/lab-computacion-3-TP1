@@ -198,12 +198,19 @@ body {
 .grid-productos > .card {
     cursor: pointer;
     margin-bottom: 1rem;
+    box-shadow: 0 0 0 1px var(--clr-green);
+    transition: box-shadow 0.25s linear;
     @media (min-width: 768px) {
         margin-bottom: 0;
     }
 }
+.grid-productos > .card:hover {
+    box-shadow: 0 0 0 5px var(--clr-green);
+}
+
 .card-img-container {
     position: relative;
+    border-bottom: 4px solid var(--clr-green);
 }
 .card-precio {
     position: absolute;
