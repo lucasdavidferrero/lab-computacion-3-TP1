@@ -223,6 +223,18 @@ body {
     max-height: 400px;
     object-fit: cover;
 }
+.seccion-superior {
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.seccion-superior > .btn {
+    width: 100%;
+    @media (min-width: 768px) {
+        width: auto;
+    }
+}
 /* Fin Merchandising */
 
 /* Asociate */
